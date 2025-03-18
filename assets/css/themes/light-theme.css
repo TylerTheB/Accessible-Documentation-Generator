@@ -1,0 +1,189 @@
+/**
+ * Light Theme for AccessDocs
+ * Default theme with a clean, accessible design
+ */
+
+:root,
+[data-theme="light"] {
+  /* Base colors - light theme */
+  --color-text: #1f2937;
+  --color-background: #ffffff;
+  --color-primary: #2563eb;
+  --color-secondary: #4f46e5;
+  --color-accent: #8b5cf6;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-success: #10b981;
+  --color-info: #3b82f6;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Focus styles */
+  --focus-ring-color: rgba(59, 130, 246, 0.5);
+  --focus-ring-offset: 3px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Header styles */
+[data-theme="light"] header {
+  background-color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Code blocks */
+[data-theme="light"] pre {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+[data-theme="light"] code {
+  background-color: #f3f4f6;
+}
+
+[data-theme="light"] p code, 
+[data-theme="light"] li code {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+}
+
+/* Table styles */
+[data-theme="light"] th {
+  background-color: #f9fafb;
+}
+
+[data-theme="light"] tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Sidebar */
+[data-theme="light"] .sidebar {
+  background-color: #f9fafb;
+  border-right: 1px solid var(--color-border);
+}
+
+/* Active link in TOC */
+[data-theme="light"] .toc-link-active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Button styles */
+[data-theme="light"] button {
+  background-color: var(--color-primary);
+}
+
+[data-theme="light"] button:hover {
+  background-color: var(--color-secondary);
+}
+
+[data-theme="light"] .font-size-controls button {
+  background-color: #f3f4f6;
+  color: var(--color-text);
+  border: 1px solid #e5e7eb;
+}
+
+[data-theme="light"] .font-size-controls button:hover {
+  background-color: #e5e7eb;
+}
+
+/* Form elements */
+[data-theme="light"] select {
+  background-color: #f9fafb;
+  border: 1px solid var(--color-border);
+}
+
+/* Copy code button */
+[data-theme="light"] .copy-code-button {
+  background-color: rgba(229, 231, 235, 0.8);
+  color: var(--color-text);
+}
+
+/* Keyboard shortcuts dialog */
+[data-theme="light"] #keyboard-shortcuts-dialog {
+  background-color: #ffffff;
+}
+
+[data-theme="light"] #keyboard-shortcuts-dialog kbd {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: var(--color-text);
+}
+
+/* Accessibility results */
+[data-theme="light"] #accessibility-results {
+  background-color: #ffffff;
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="light"] .issue-code {
+  background-color: #f3f4f6;
+}
+
+/* Links */
+[data-theme="light"] a:hover {
+  color: var(--color-secondary);
+  text-decoration-thickness: 2px;
+}
+
+/* Blockquotes */
+[data-theme="light"] blockquote {
+  background-color: #f9fafb;
+  border-left: 4px solid var(--color-border);
+}
+
+/* Skip link */
+[data-theme="light"] .skip-link:focus {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Admonitions */
+[data-theme="light"] .admonition {
+  background-color: #f9fafb;
+  border-left: 4px solid var(--color-info);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+[data-theme="light"] .admonition-title {
+  color: var(--color-info);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: var(--spacing-2);
+}
+
+[data-theme="light"] .admonition.note {
+  border-left-color: var(--color-info);
+}
+
+[data-theme="light"] .admonition.note .admonition-title {
+  color: var(--color-info);
+}
+
+[data-theme="light"] .admonition.warning {
+  border-left-color: var(--color-warning);
+}
+
+[data-theme="light"] .admonition.warning .admonition-title {
+  color: var(--color-warning);
+}
+
+[data-theme="light"] .admonition.danger {
+  border-left-color: var(--color-error);
+}
+
+[data-theme="light"] .admonition.danger .admonition-title {
+  color: var(--color-error);
+}
+
+[data-theme="light"] .admonition.tip {
+  border-left-color: var(--color-success);
+}
+
+[data-theme="light"] .admonition.tip .admonition-title {
+  color: var(--color-success);
+}
