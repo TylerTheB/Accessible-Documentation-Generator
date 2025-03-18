@@ -13,12 +13,24 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // Serve static files from the build directory
-// Use default contents if build directory doesn't exist
+// Create a default page if build directory doesn't exist
 const buildDir = path.join(__dirname, 'build');
 
+// Create build directory if it doesn't exist
 if (!fs.existsSync(buildDir)) {
-  // If build directory doesn't exist, create it
-  fs.mkdirSync(buildDir, { recursive: true });
+  console.log('Build directory does not exist, creating it...');
+  try {
+    fs.mkdirSync(buildDir, { recursive: true });
+    console.log('Build directory created successfully');
+  } catch (err) {
+    console.error('Error creating build directory:', err);
+  }
+}
+
+// Create index.html file if it doesn't exist
+const indexHtmlPath = path.join(buildDir, 'index.html');
+if (!fs.existsSync(indexHtmlPath)) {
+  console.log('Index file does not exist, creating it...');
   
   // Create a simple index.html file
   const indexHtml = `
@@ -83,14 +95,29 @@ if (!fs.existsSync(buildDir)) {
 </html>
   `;
   
-  fs.writeFileSync(path.join(buildDir, 'index.html'), indexHtml);
+  try {
+    fs.writeFileSync(indexHtmlPath, indexHtml);
+    console.log('Index file created successfully');
+  } catch (err) {
+    console.error('Error creating index file:', err);
+  }
 }
 
+console.log(`Serving static files from: ${buildDir}`);
 app.use(express.static(buildDir));
 
 // Fallback to index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(buildDir, 'index.html'));
+});
+
+// Socket.io for live reload functionality
+io.on('connection', (socket) => {
+  console.log('Client connected');
+  
+  socket.on('disconnect', () => {
+    console.log('Client disconnected');
+  });
 });
 
 // Start server
