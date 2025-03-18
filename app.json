@@ -1,7 +1,7 @@
 {
   "name": "accessdocs",
   "description": "A documentation generator focused on creating highly accessible documentation that works seamlessly with screen readers and assistive technologies",
-  "repository": "https://github.com/IamAntiHero/Accessible-Documentation-Generator",
+  "repository": "https://github.com/TylerTheB/Accessible-Documentation-Generator",
   "logo": "https://raw.githubusercontent.com/IamAntiHero/Accessible-Documentation-Generator/main/assets/images/logo.png",
   "keywords": ["documentation", "accessibility", "a11y", "screen reader", "WCAG", "ARIA", "assistive technology", "node"],
   "env": {
