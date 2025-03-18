@@ -1,0 +1,217 @@
+/**
+ * High Contrast Theme for AccessDocs
+ * Focus is on maximum contrast for accessibility
+ */
+
+:root.high-contrast,
+.high-contrast {
+  /* Base colors - high contrast */
+  --color-text: #ffffff;
+  --color-background: #000000;
+  --color-primary: #ffff00;
+  --color-secondary: #00ffff;
+  --color-accent: #ff00ff;
+  --color-muted: #cccccc;
+  --color-border: #ffffff;
+  --color-success: #00ff00;
+  --color-info: #00ffff;
+  --color-warning: #ffff00;
+  --color-error: #ff0000;
+  
+  /* Focus styles - more visible in high contrast */
+  --focus-ring-color: #ffffff;
+  --focus-ring-offset: 3px;
+  
+  /* Larger font for better readability */
+  font-size: 110%;
+}
+
+/* Links with underline and strong contrast */
+.high-contrast a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  font-weight: 600;
+}
+
+.high-contrast a:hover,
+.high-contrast a:focus {
+  color: var(--color-secondary);
+  text-decoration: underline double;
+}
+
+/* Make focus very visible */
+.high-contrast *:focus {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Buttom styles */
+.high-contrast button,
+.high-contrast .button {
+  background-color: var(--color-primary);
+  color: #000000;
+  border: 2px solid #ffffff;
+  font-weight: 700;
+}
+
+.high-contrast button:hover,
+.high-contrast button:focus,
+.high-contrast .button:hover,
+.high-contrast .button:focus {
+  background-color: var(--color-secondary);
+  color: #000000;
+}
+
+.high-contrast button:disabled,
+.high-contrast .button:disabled {
+  background-color: var(--color-muted);
+  color: #000000;
+  border-color: #cccccc;
+}
+
+/* Headers with bottom border for better separation */
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6 {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-2);
+}
+
+/* Code blocks with high contrast */
+.high-contrast pre {
+  background-color: #000000;
+  border: 2px solid var(--color-border);
+  color: #ffffff;
+}
+
+.high-contrast code {
+  background-color: #000000;
+  color: var(--color-secondary);
+  border: 1px solid #ffffff;
+}
+
+.high-contrast p code, 
+.high-contrast li code {
+  background-color: #000000;
+  color: var(--color-secondary);
+  padding: 0.2em 0.4em;
+  border: 1px solid #ffffff;
+}
+
+/* Tables with clear borders */
+.high-contrast th,
+.high-contrast td {
+  border: 2px solid var(--color-border);
+}
+
+.high-contrast th {
+  background-color: #333333;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* For elements that might not have enough contrast */
+.high-contrast .copy-code-button {
+  background-color: var(--color-secondary);
+  color: #000000;
+  border: 2px solid #ffffff;
+  opacity: 1;
+}
+
+.high-contrast select {
+  background-color: #000000;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.high-contrast .font-size-controls button {
+  background-color: #000000;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.high-contrast .font-size-controls button:hover,
+.high-contrast .font-size-controls button:focus {
+  background-color: #333333;
+}
+
+/* Header and footer */
+.high-contrast header,
+.high-contrast footer {
+  border-color: var(--color-border);
+}
+
+/* Dialog styles */
+.high-contrast #keyboard-shortcuts-dialog,
+.high-contrast dialog {
+  background-color: #000000;
+  border: 2px solid var(--color-border);
+}
+
+.high-contrast #keyboard-shortcuts-dialog kbd {
+  background-color: #333333;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+/* Accessibility results */
+.high-contrast #accessibility-results {
+  background-color: #000000;
+  border-top: 4px solid var(--color-primary);
+}
+
+.high-contrast .issue-code {
+  background-color: #333333;
+}
+
+.high-contrast .success-message {
+  color: var(--color-success);
+}
+
+/* Skip link with more visibility */
+.high-contrast .skip-link {
+  background: var(--color-primary);
+  color: #000000;
+  font-weight: 700;
+  padding: var(--spacing-2) var(--spacing-4);
+}
+
+.high-contrast .skip-link:focus {
+  outline: 3px solid #ffffff;
+}
+
+/* Table of contents */
+.high-contrast #toc {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-4);
+}
+
+.high-contrast .toc-link {
+  padding: var(--spacing-2) var(--spacing-1);
+}
+
+/* Images with border for context */
+.high-contrast img {
+  border: 1px solid var(--color-border);
+}
+
+/* Blockquotes */
+.high-contrast blockquote {
+  border-left: 4px solid var(--color-secondary);
+  color: var(--color-text);
+}
+
+/* Warning for accessibility issues */
+.high-contrast .a11y-warning {
+  outline: 4px dashed var(--color-error) !important;
+}
+
+.high-contrast .a11y-warning::after {
+  background-color: var(--color-error);
+  color: #000000;
+  font-weight: 700;
+}
