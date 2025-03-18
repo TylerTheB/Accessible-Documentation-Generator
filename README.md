@@ -4,6 +4,8 @@
 
 AccessDocs is a documentation generator focused on creating highly accessible documentation that works seamlessly with screen readers and other assistive technologies.
 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/yourusername/accessdocs)
+
 ## Features
 
 - **WCAG Compliance**: Automatically ensures documentation meets WCAG 2.1 AA/AAA standards
@@ -17,35 +19,126 @@ AccessDocs is a documentation generator focused on creating highly accessible do
 - **Accessible Code Blocks**: Makes code examples accessible to screen reader users
 - **Multilingual Support**: Handles internationalization with appropriate language attributes
 
-## Installation
+## Deployment Options
+
+### Local Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/accessdocs.git
+cd accessdocs
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Initialize a new documentation project:
+
+```bash
+npx accessdocs init my-project
+```
+
+4. Configure your accessibility preferences in `accessdocs.config.js`
+
+5. Add your documentation in Markdown format to the `docs` directory
+
+6. Generate your accessible documentation:
+
+```bash
+npx accessdocs build
+```
+
+7. Preview and test the accessibility of your documentation:
+
+```bash
+npx accessdocs serve
+```
+
+### NPM Installation (Global)
+
+1. Install the package globally:
 
 ```bash
 npm install -g accessdocs
 ```
 
-## Quick Start
-
-1. Initialize a new documentation project:
+2. Initialize a new documentation project:
 
 ```bash
 accessdocs init my-project
 ```
 
-2. Configure your accessibility preferences in `accessdocs.config.js`
+3. Continue with steps 4-7 from the Local Installation section.
 
-3. Add your documentation in Markdown format to the `docs` directory
+### Deploy to Heroku
 
-4. Generate your accessible documentation:
+#### Prerequisites:
+- A [Heroku account](https://signup.heroku.com/)
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed
+- Git installed on your machine
+
+#### Option 1: One-Click Deployment
+
+Click the "Deploy to Heroku" button at the top of this README to automatically deploy the application.
+
+#### Option 2: Manual Deployment
+
+1. Clone the repository:
 
 ```bash
-accessdocs build
+git clone https://github.com/yourusername/accessdocs.git
+cd accessdocs
 ```
 
-5. Preview and test the accessibility of your documentation:
+2. Login to Heroku:
 
 ```bash
-accessdocs serve
+heroku login
 ```
+
+3. Create a new Heroku app:
+
+```bash
+heroku create your-accessdocs-app
+```
+
+4. Add a Procfile (if not already present):
+
+```bash
+echo "web: npm start" > Procfile
+```
+
+5. Configure environment variables (if needed):
+
+```bash
+heroku config:set NODE_ENV=production
+```
+
+6. Deploy to Heroku:
+
+```bash
+git push heroku main
+```
+
+7. Open your application:
+
+```bash
+heroku open
+```
+
+#### Configuration on Heroku
+
+- Your documentation files can be stored in the application's file system or connected to a database/storage service
+- For production use, consider connecting to a persistent storage solution like S3 or a database
+- Customization options are available through environment variables:
+  ```bash
+  heroku config:set ACCESSDOCS_THEME=dark
+  heroku config:set ACCESSDOCS_WCAG_LEVEL=AAA
+  ```
 
 ## Accessibility Features
 
