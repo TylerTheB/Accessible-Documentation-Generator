@@ -1,0 +1,35 @@
+{
+  "name": "accessdocs",
+  "description": "A documentation generator focused on creating highly accessible documentation that works seamlessly with screen readers and assistive technologies",
+  "repository": "https://github.com/IamAntiHero/Accessible-Documentation-Generator",
+  "logo": "https://raw.githubusercontent.com/IamAntiHero/Accessible-Documentation-Generator/main/assets/images/logo.png",
+  "keywords": ["documentation", "accessibility", "a11y", "screen reader", "WCAG", "ARIA", "assistive technology", "node"],
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment for the application",
+      "value": "production"
+    },
+    "ACCESSDOCS_THEME": {
+      "description": "Default theme for documentation (light, dark, sepia)",
+      "value": "light",
+      "required": false
+    },
+    "ACCESSDOCS_WCAG_LEVEL": {
+      "description": "WCAG compliance level (A, AA, AAA)",
+      "value": "AA",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "success_url": "/"
+}
